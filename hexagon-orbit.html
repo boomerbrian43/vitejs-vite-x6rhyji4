@@ -82,7 +82,7 @@
 
   const playerOrbitRadius = () => Math.max(70, Math.min(W, H) * 0.13);
   const ringMaxRadius     = () => Math.hypot(W, H) * 0.55 + 60;
-  const ringSpacing       = () => Math.max(110, Math.min(W, H) * 0.14);
+  const ringSpacing       = () => Math.max(210, Math.min(W, H) * 0.26);
   const playerRadius      = () => Math.max(7, Math.min(W, H) * 0.017);
 
   const state = {
@@ -91,7 +91,7 @@
     particles: [],
     score: 0,
     high: +(localStorage.getItem(HIGH_KEY) || 0),
-    ringBaseSpeed: 140,
+    ringBaseSpeed: 115,
     started: false,
     dead: false,
     deadTimer: 0,
@@ -99,7 +99,7 @@
 
   function speedMul() {
     // Addictive ramp: scales with score, soft-capped.
-    return 1 + Math.min(2.2, state.score * 0.022);
+    return 1 + Math.min(2.0, state.score * 0.018);
   }
 
   function makeRing(radius) {
